@@ -2,7 +2,10 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>App - Hello Guys!</div>
+    <>
+      App - Hello Guys!
+      Commit using VSCode GitHub source control
+    </>
   )
 }
 
