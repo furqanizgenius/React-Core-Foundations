@@ -5,6 +5,7 @@ const App = () => {
     <>
       App - Hello Guys!
       Commit using VSCode GitHub source control
+      Furqan Mehmood
     </>
   )
 }
