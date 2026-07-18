@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <>
-    <button onClick={getData}>Get Data</button>
+    <button onClick={getData}>Get Data from API</button>
       {
         data.map((elem, index) => {
           return <div key={elem.id}>
