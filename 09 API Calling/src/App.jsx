@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Card from "./Components/Card"
+import axios from "axios"
 
 const App = () => {
   const [data, setData] = useState([])
@@ -9,6 +10,11 @@ const App = () => {
       const response = await fetch("https://jsonplaceholder.typicode.com/users")
       const data = await response.json()
       setData(data)
+      console.log(data)
+      
+      // Same Task using AXIOS 
+      // const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+      // setData(response.data)
     }
     catch (error) {
       console.log("Error while fetching data:", error)
