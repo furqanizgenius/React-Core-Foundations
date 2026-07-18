@@ -14,18 +14,18 @@ const App = () => {
       console.log("Error while fetching data:", error)
     }
   }
-  // useEffect(()=>{
+  // useEffect(() => {
   //   getData()
-  // },[])
+  // }, [])
 
 
   return (
     <>
-    <button onClick={getData}>Get Data from API</button>
+      <button onClick={getData}>Get Data from API</button>
       {
         data.map((elem, index) => {
           return <div key={elem.id}>
-            <Card name={elem.name} username={elem.username} email={elem.email} phone={elem.phone} website={elem.website} company={elem.company.name} />
+            <Card name={elem.name} username={elem.username} email={elem.email} phone={elem.phone} website={elem.website} company={elem.company.name} id={elem.id} />
           </div>
         })
       }

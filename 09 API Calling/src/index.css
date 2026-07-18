@@ -5,6 +5,10 @@ button {
   color: white;
   font-weight: bold;
 }
+button:active{
+  background-color: black;
+  transform: scale(1.1);
+}
 .card{
   outline: 2px solid black;
   padding: 10px;
