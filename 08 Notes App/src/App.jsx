@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const App = () => {
   const [title, setTitle] = useState('')
@@ -14,12 +14,12 @@ const App = () => {
     setTitle('')
     setDetails('')
   }
+
   const deleteNote = (indexToRemove) => {
     const updatedTask = task.filter((elem, index) => index !== indexToRemove);
     setTask(updatedTask)
     console.log(updatedTask)
   }
-
 
   return (
     <div className='h-screen lg:flex bg-black text-white'>
@@ -61,9 +61,13 @@ const App = () => {
       </form>
 
       <div className='lg:w-1/2 lg:border-l-2 p-10'>
-        <h1 className='text-4xl font-bold'>Recent Notes📒
-          {task.length === 0 ? "" : ` (${task.length})`}
-        </h1>
+        <div className='flex justify-between items-center'>
+          <h1 className='text-4xl font-bold bg-amber-10'>Recent Notes📒</h1>
+          <div className='bg-white text-black p-2 mr-3 flex items-center font-semibold w-fit rounded-full'>
+            {task.length === 0 ? "Count" : ` ${task.length}`}
+          </div>
+        </div>
+
         <div className='flex flex-wrap items-start justify-start gap-5 mt-6 h-[90%] overflow-auto'>
           {
             task.length === 0 ? (
@@ -75,7 +79,7 @@ const App = () => {
                     return <div key={elem.id} className=" flex justify-between flex-col items-start relative h-52 w-40 bg-cover rounded-xl text-black pt-6 pb-4 px-4 bg-[url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')]">
                       <div>
                         <h3 className='leading-tight text-md font-bold'>{elem.title}</h3>
-                        <p className='mt-2 leading-tight text-[11px] font-semibold text-gray-600 '>{elem.details}</p>
+                        <p className='mt-2 leading-tight text-[11px] font-semibold text-gray-600'>{elem.details}</p>
                       </div>
                       <button onClick={() => {
                         deleteNote(index)
